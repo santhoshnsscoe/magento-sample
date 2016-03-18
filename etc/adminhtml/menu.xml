@@ -3,6 +3,7 @@
     <menu>
         <add id="VendorName_SampleModule::base" title="VendorName" module="VendorName_SampleModule" sortOrder="55" dependsOnModule="VendorName_SampleModule" resource="VendorName_SampleModule::base"/>
         <add id="VendorName_SampleModule::mytab" title="My Tab" module="VendorName_SampleModule" sortOrder="10" parent="VendorName_SampleModule::base" resource="VendorName_SampleModule::mytab"/>
-        <add id="VendorName_SampleModule::index" title="Sample Page" module="VendorName_SampleModule" sortOrder="20" parent="VendorName_SampleModule::mytab" action="vendorname_samplemodule/index/sample" resource="VendorName_SampleModule::view"/>
+        <add id="VendorName_SampleModule::index" title="Sample Page" module="VendorName_SampleModule" sortOrder="10" parent="VendorName_SampleModule::mytab" action="vendorname_samplemodule/index/sample" resource="VendorName_SampleModule::view"/>
+        <add id="VendorName_SampleModule::grid" title="Grid Page" module="VendorName_SampleModule" sortOrder="20" parent="VendorName_SampleModule::mytab" action="vendorname_samplemodule/grid/index" resource="VendorName_SampleModule::grid"/>
     </menu>
 </config>

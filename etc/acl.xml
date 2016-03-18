@@ -5,7 +5,10 @@
             <resource id="Magento_Backend::admin">
                 <resource id="VendorName_SampleModule::base" title="VendorName" sortOrder="55">
                     <resource id="VendorName_SampleModule::mytab" title="My Tab" sortOrder="20">
-                        <resource id="VendorName_SampleModule::view" title="Sample Page" sortOrder="20" />
+                        <resource id="VendorName_SampleModule::view" title="Sample Page" sortOrder="10" />
+                        <resource id="VendorName_SampleModule::grid" title="Grid Page" sortOrder="20" >
+                            <resource id="VendorName_SampleModule::grid_export" title="Grid Page" sortOrder="10" />
+                        </resource>
                     </resource>
                 </resource>
             </resource>
