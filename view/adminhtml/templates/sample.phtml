@@ -1,0 +1,12 @@
+<div class="entry-edit">
+    <form id="my_form" class="admin__fieldset" action="" method="post" enctype="multipart/form-data">
+        <?php echo $block->getBlockHtml('formkey') ?>
+        <div class="fieldset admin__field">
+            <label for="myfield" class="admin__field-label"><span><?php echo __('My Field') ?></span></label>
+            <div class="admin__field-control">
+                <input id="myfield" name="myfield" value="<?php echo $block->getMyField() ?>" class="input-text required-entry" type="text" />
+                <?php echo $block->getButtonHtml(__('Submit'), 'this.form.submit()', '', 'show_myfield') ?>
+            </div>
+        </div>
+    </form>
+</div>

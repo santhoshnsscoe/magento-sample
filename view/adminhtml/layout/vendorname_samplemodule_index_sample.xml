@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page layout="admin-1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="VendorName\SampleModule\Block\Adminhtml\Sample" name="my.sample.page" template="VendorName_SampleModule::sample.phtml">
+            </block>
+        </referenceContainer>
+    </body>
+</page>
