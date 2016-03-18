@@ -20,7 +20,7 @@ class ExportCsv extends \Magento\Backend\App\Action {
 
     public function execute() {
 
-        $fileName = 'salesrep-orders.csv';
+        $fileName = 'sample-grid.csv';
         $resultPage = $this->_resultPageFactory->create();
         $csv_file = $resultPage->getLayout()
                 ->createBlock('VendorName\SampleModule\Block\Adminhtml\Sample\Detail\Grid')

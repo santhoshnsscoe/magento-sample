@@ -20,7 +20,7 @@ class ExportExcel extends \Magento\Backend\App\Action {
 
     public function execute() {
 
-        $fileName = 'salesrep-orders.xml';
+        $fileName = 'sample-grid.xml';
         $resultPage = $this->_resultPageFactory->create();
         $csv_file = $resultPage->getLayout()
                 ->createBlock('VendorName\SampleModule\Block\Adminhtml\Sample\Detail\Grid')
