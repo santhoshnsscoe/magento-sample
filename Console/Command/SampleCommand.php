@@ -6,11 +6,13 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 
 class SampleCommand extends Command {
 
     //params
     protected $_limit;
+    protected $_mylimit;
 
     protected function configure() {
         $this->setName('mysample:update')
@@ -21,6 +23,8 @@ class SampleCommand extends Command {
 
     protected function execute(InputInterface $input, OutputInterface $output) {
         $this->addArguments($input);
+        $output->writeln("Limit = {$this->_limit}");
+        $output->writeln("Option Limit = {$this->_mylimit}");
 
         try {
             //code to execute
@@ -35,14 +39,13 @@ class SampleCommand extends Command {
 
     public function addArguments($input) {
         $this->_limit = intval($input->getArgument("limit"));
-        if ($this->_limit <= 0) {
-            $this->_limit = 100;
-        }
+        $this->_mylimit = intval($input->getOption("mylimit"));
     }
 
     public function getInputList() {
         $inputList = [];
-        $inputList[] = new InputArgument('limit', InputArgument::OPTIONAL, 'Collection Limit');
+        $inputList[] = new InputArgument('limit', InputArgument::OPTIONAL, 'Collection Limit as Argument', 100);
+        $inputList[] = new InputOption('mylimit', null, InputOption::VALUE_OPTIONAL, 'Collection Limit as Option', 100);
         return $inputList;
     }
 
