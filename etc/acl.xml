@@ -11,6 +11,13 @@
                         </resource>
                     </resource>
                 </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="VendorName_SampleModule::config" title="Sample Module" />
+                        </resource>
+                    </resource>
+                </resource>
             </resource>
         </resources>
     </acl>
