@@ -1,0 +1,26 @@
+<?php
+$specificInfo = $block->getSpecificInformation();
+?>
+<?php echo $block->escapeHtml($block->getMethod()->getTitle()); ?>
+
+<?php if ($specificInfo): ?>
+    <table class="data-table admin__table-secondary">
+    <?php foreach ($specificInfo as $label => $value):?>
+        <tr>
+            <th><?php echo $block->escapeHtml($label)?>:</th>
+            <td>
+                <?php /* @noEscape */ echo nl2br($block->escapeHtml(implode("\n", $block->getValueAsArray($value, true))));?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </table>
+<?php endif;?>
+
+<?php $additionalInfo = $block->getAdditionalInformation(); ?>
+<?php if (!empty($additionalInfo)) { ?>
+	<?php foreach ($additionalInfo as $key => $info) { ?>
+		<div><?php echo nl2br($info); ?></div>
+	<?php } ?>
+<?php } ?>
+
+<?php echo $block->getChildHtml()?>

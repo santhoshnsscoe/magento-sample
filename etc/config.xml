@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <vendorname_samplemodule>
+                <active>0</active>
+                <cctypes>AE,VI,MC,DI</cctypes>
+                <debug>0</debug>
+                <order_status>processing</order_status>
+                <model>VendorName\SampleModule\Model\Payment</model>
+                <payment_action>authorize_capture</payment_action>
+                <title>Credit Card (Sample)</title>
+                <allowspecific>0</allowspecific>
+            </vendorname_samplemodule>
+        </payment>
+    </default>
+</config>
