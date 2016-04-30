@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\PaymentOverride\Helper;
+namespace VendorName\SampleModule\Helper;
 
 use Magento\Store\Model\ScopeInterface;
 

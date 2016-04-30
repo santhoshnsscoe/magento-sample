@@ -14,3 +14,4 @@ This is a sample magento 2 module to explain on each concept that is explained i
 10. http://mage-simplified.blogspot.com/2016/03/magento-2-create-attributes-in-setup.html
 11. http://mage-simplified.blogspot.com/2016/04/magento-2-add-to-system-configuration.html
 12. http://mage-simplified.blogspot.com/2016/04/magento-2-implementing-payment-gateway.html
+13. http://mage-simplified.blogspot.com/2016/04/magento-2-send-custom-transactional.html

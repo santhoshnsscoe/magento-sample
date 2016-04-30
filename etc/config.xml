@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
+        <vendorname_samplemodule>
+            <settings>
+                <identity>general</identity>
+                <template>vendorname_samplemodule_email_template_sample</template>
+            </settings>
+        </vendorname_samplemodule>
         <payment>
             <vendorname_samplemodule>
                 <active>0</active>
