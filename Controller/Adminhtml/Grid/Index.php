@@ -2,30 +2,18 @@
 
 namespace VendorName\SampleModule\Controller\Adminhtml\Grid;
 
-use Magento\Backend\App\Action\Context;
-use Magento\Framework\View\Result\PageFactory;
-
 class Index extends \Magento\Backend\App\Action {
 
-    protected $_resultPageFactory;
-
-    public function __construct(Context $context, PageFactory $resultPageFactory) {
-        $this->_resultPageFactory = $resultPageFactory;
-        parent::__construct($context);
-    }
+    const ADMIN_RESOURCE = 'VendorName_SampleModule::grid';
 
     public function execute() {
-        $resultPage = $this->_resultPageFactory->create();
-        $resultPage->setActiveMenu('VendorName_SampleModule::index');
-        $resultPage->getConfig()->getTitle()->prepend(__('My Sample Grid'));
-        $resultPage->addContent(
-                $resultPage->getLayout()->createBlock('VendorName\SampleModule\Block\Adminhtml\Sample\Detail')
+        $this->_view->loadLayout();
+        $this->_setActiveMenu('VendorName_SampleModule::index');
+        $this->_view->getPage()->getConfig()->getTitle()->prepend(__('My Sample Grid'));
+        $this->_addContent(
+                $this->_view->getLayout()->createBlock('VendorName\SampleModule\Block\Adminhtml\Sample\Detail')
         );
-        return $resultPage;
-    }
-
-    protected function _isAllowed() {
-        return $this->_authorization->isAllowed('VendorName_SampleModule::grid');
+        $this->_view->renderLayout();
     }
 
 }

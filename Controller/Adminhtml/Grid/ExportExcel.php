@@ -3,17 +3,18 @@
 namespace VendorName\SampleModule\Controller\Adminhtml\Grid;
 
 use Magento\Backend\App\Action\Context;
-use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\App\Response\Http\FileFactory;
 use Magento\Framework\App\Filesystem\DirectoryList;
 
 class ExportExcel extends \Magento\Backend\App\Action {
 
-    protected $_resultPageFactory;
+    const ADMIN_RESOURCE = 'VendorName_SampleModule::grid_export';
+
+    
     protected $_fileFactory;
 
-    public function __construct(Context $context, PageFactory $resultPageFactory, FileFactory $fileFactory) {
-        $this->_resultPageFactory = $resultPageFactory;
+    public function __construct(Context $context, FileFactory $fileFactory) {
+        
         $this->_fileFactory = $fileFactory;
         parent::__construct($context);
     }
@@ -21,8 +22,8 @@ class ExportExcel extends \Magento\Backend\App\Action {
     public function execute() {
 
         $fileName = 'sample-grid.xml';
-        $resultPage = $this->_resultPageFactory->create();
-        $csv_file = $resultPage->getLayout()
+        $this->_view->loadLayout();
+        $csv_file = $this->_view->getLayout()
                 ->createBlock('VendorName\SampleModule\Block\Adminhtml\Sample\Detail\Grid')
                 ->getExcelFile();
         return $this->_fileFactory->create(
@@ -30,10 +31,6 @@ class ExportExcel extends \Magento\Backend\App\Action {
             $csv_file,
             DirectoryList::VAR_DIR
         );
-    }
-
-    protected function _isAllowed() {
-        return $this->_authorization->isAllowed('VendorName_SampleModule::grid_export');
     }
 
 }
